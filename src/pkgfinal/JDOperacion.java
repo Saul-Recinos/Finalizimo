@@ -6,20 +6,38 @@
 package pkgfinal;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author saulr
  */
 public class JDOperacion extends javax.swing.JDialog {
+
     Conexion cx = new Conexion();
     Connection cc = cx.conectar();
+    DefaultTableModel model = new DefaultTableModel();
+    DefaultTableModel tx = null;
     /**
      * Creates new form JDOperacion
      */
     public JDOperacion(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        model.addColumn("IdProducto");
+        model.addColumn("NombreProducto");
+        model.addColumn("Descripcion");
+        model.addColumn("FechaCompra");
+        model.addColumn("FechaVencimiento");
+        model.addColumn("PrecioVenta");
+        model.addColumn("PrecioCompra");
+
+        this.tcompra.setModel(model);
     }
 
     /**
@@ -48,8 +66,6 @@ public class JDOperacion extends javax.swing.JDialog {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tcompra = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tproducto = new javax.swing.JTable();
         btnagregar = new javax.swing.JButton();
         btneliminar = new javax.swing.JButton();
         btnfin = new javax.swing.JButton();
@@ -118,28 +134,18 @@ public class JDOperacion extends javax.swing.JDialog {
         ));
         jScrollPane1.setViewportView(tcompra);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 362, 450, 330));
-
-        tproducto.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane2.setViewportView(tproducto);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 362, 450, 330));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 362, 920, 330));
 
         btnagregar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         btnagregar.setForeground(new java.awt.Color(255, 255, 255));
         btnagregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/car.png"))); // NOI18N
         btnagregar.setText("Agregar");
         btnagregar.setContentAreaFilled(false);
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
 
         btneliminar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
@@ -147,6 +153,11 @@ public class JDOperacion extends javax.swing.JDialog {
         btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/carx.png"))); // NOI18N
         btneliminar.setText("Eliminar");
         btneliminar.setContentAreaFilled(false);
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, -1, -1));
 
         btnfin.setBackground(new java.awt.Color(255, 255, 255));
@@ -155,6 +166,11 @@ public class JDOperacion extends javax.swing.JDialog {
         btnfin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/listo.png"))); // NOI18N
         btnfin.setText("Finalizar Compra");
         btnfin.setContentAreaFilled(false);
+        btnfin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnfinActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnfin, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, 250, 70));
 
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
@@ -163,6 +179,65 @@ public class JDOperacion extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnfinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfinActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnfinActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+        // TODO add your handling code here:
+        try {
+            String sql = "delete from productos where IdProducto='" + txtcodigo.getText() + "'";
+            PreparedStatement p = cc.prepareStatement(sql);
+            p.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos Eliminados");
+            mostrar();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+    }//GEN-LAST:event_btneliminarActionPerformed
+    
+      public void mostrar() {
+        String[] titulos = {"IdProducto","NombreProducto", "Descripcion", "FechaCompra", "FechaVencimiento", "PrecioVenta", "PrecioCompra"};
+        String[] re = new String[7];
+        String sql = "select*from productos";
+        tx = new DefaultTableModel(null, titulos);
+        try {          
+            Statement st = cc.createStatement();
+            ResultSet r = st.executeQuery(sql);
+            while (r.next()) {
+                re[0] = r.getString("IdProducto");
+                re[1] = r.getString("NombreProducto");
+                re[2] = r.getString("Descripcion");
+                re[3] = r.getString("FechaCompra");
+                re[4] = r.getString("FechaVencimiento");
+                re[5] = r.getString("PrecioVenta");
+                re[6] = r.getString("PrecioCompra");
+                tx.addRow(re);
+            }
+            tcompra.setModel(tx);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        // TODO add your handling code here:
+        try {
+            String sql = "Insert into productos values('" + txtcodigo.getText() + "','" + txtnombre.getText() + "','" + txtdes.getText() + "','" + txtfcompra.getText() + "','"
+                    + txtfvencimiento.getText() + "','"
+                    + txtpventa.getText() + "','"
+                    + txtpcompra.getText() + "')";
+            PreparedStatement pp = cc.prepareStatement(sql);
+            pp.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Datos insertados");
+            mostrar();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        
+    }//GEN-LAST:event_btnagregarActionPerformed
+    }
+    
 
     /**
      * @param args the command line arguments
@@ -221,9 +296,7 @@ public class JDOperacion extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tcompra;
-    private javax.swing.JTable tproducto;
     private javax.swing.JTextField txtcodigo;
     private javax.swing.JTextField txtdes;
     private javax.swing.JTextField txtfcompra;
