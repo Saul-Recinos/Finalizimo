@@ -29,27 +29,27 @@ public class JDOperacion extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtcodigo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtnombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtfcompra = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtfvencimiento = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtpventa = new javax.swing.JTextField();
+        txtpcompra = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtdes = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tcompra = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        tproducto = new javax.swing.JTable();
+        btnagregar = new javax.swing.JButton();
+        btneliminar = new javax.swing.JButton();
+        btnfin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -59,25 +59,25 @@ public class JDOperacion extends javax.swing.JDialog {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Codigo");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 130, 40));
+        getContentPane().add(txtcodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 130, 40));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nombre");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 130, 40));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 130, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha Compra");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 140, 40));
+        getContentPane().add(txtfcompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, 140, 40));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Fecha Vencimiento");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, -1, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 140, 40));
+        getContentPane().add(txtfvencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 140, 40));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -88,21 +88,21 @@ public class JDOperacion extends javax.swing.JDialog {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Precio Compra");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, -1, -1));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, 130, 40));
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 160, 130, 40));
+        getContentPane().add(txtpventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, 130, 40));
+        getContentPane().add(txtpcompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 160, 130, 40));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Descripcion");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 760, 40));
+        getContentPane().add(txtdes, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 760, 40));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("COMPRA");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tcompra.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -113,11 +113,11 @@ public class JDOperacion extends javax.swing.JDialog {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tcompra);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 362, 450, 330));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tproducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -128,31 +128,31 @@ public class JDOperacion extends javax.swing.JDialog {
 
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tproducto);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(482, 362, 450, 330));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/car.png"))); // NOI18N
-        jButton1.setText("Agregar");
-        jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
+        btnagregar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        btnagregar.setForeground(new java.awt.Color(255, 255, 255));
+        btnagregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/car.png"))); // NOI18N
+        btnagregar.setText("Agregar");
+        btnagregar.setContentAreaFilled(false);
+        getContentPane().add(btnagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/carx.png"))); // NOI18N
-        jButton2.setText("Eliminar");
-        jButton2.setContentAreaFilled(false);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, -1, -1));
+        btneliminar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        btneliminar.setForeground(new java.awt.Color(255, 255, 255));
+        btneliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/carx.png"))); // NOI18N
+        btneliminar.setText("Eliminar");
+        btneliminar.setContentAreaFilled(false);
+        getContentPane().add(btneliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/listo.png"))); // NOI18N
-        jButton3.setText("Finalizar Compra");
-        jButton3.setContentAreaFilled(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, 250, 70));
+        btnfin.setBackground(new java.awt.Color(255, 255, 255));
+        btnfin.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        btnfin.setForeground(new java.awt.Color(255, 255, 255));
+        btnfin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/listo.png"))); // NOI18N
+        btnfin.setText("Finalizar Compra");
+        btnfin.setContentAreaFilled(false);
+        getContentPane().add(btnfin, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 270, 250, 70));
 
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/hacker.png"))); // NOI18N
@@ -205,9 +205,9 @@ public class JDOperacion extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnagregar;
+    private javax.swing.JButton btneliminar;
+    private javax.swing.JButton btnfin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -219,14 +219,14 @@ public class JDOperacion extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTable tcompra;
+    private javax.swing.JTable tproducto;
+    private javax.swing.JTextField txtcodigo;
+    private javax.swing.JTextField txtdes;
+    private javax.swing.JTextField txtfcompra;
+    private javax.swing.JTextField txtfvencimiento;
+    private javax.swing.JTextField txtnombre;
+    private javax.swing.JTextField txtpcompra;
+    private javax.swing.JTextField txtpventa;
     // End of variables declaration//GEN-END:variables
 }

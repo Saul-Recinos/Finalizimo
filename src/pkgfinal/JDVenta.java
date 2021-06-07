@@ -30,24 +30,24 @@ public class JDVenta extends javax.swing.JDialog {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtventa = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtproducto = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtpu = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txttotal = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtnit = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtnombre = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tventa = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        tproducto = new javax.swing.JTable();
+        txtagregar = new javax.swing.JButton();
+        txteliminar = new javax.swing.JButton();
+        txtfin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -62,45 +62,51 @@ public class JDVenta extends javax.swing.JDialog {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Id Venta");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 82, 150, 40));
+        getContentPane().add(txtventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 82, 150, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nombre Producto");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 150, 40));
+        getContentPane().add(txtproducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 150, 40));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Precio Unitario");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 160, 40));
+
+        txtpu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtpu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 160, 40));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Total");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, -1, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 150, 40));
+        getContentPane().add(txttotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 150, 40));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Nit");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, -1, -1));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtnit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtnitActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 160, 50));
+        getContentPane().add(txtnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, 160, 50));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Nombre");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, -1, -1));
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 240, 50));
+        getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 240, 50));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tventa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -111,11 +117,11 @@ public class JDVenta extends javax.swing.JDialog {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tventa);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tproducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -126,35 +132,35 @@ public class JDVenta extends javax.swing.JDialog {
 
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tproducto);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/car.png"))); // NOI18N
-        jButton1.setText("Agregar");
-        jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
+        txtagregar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        txtagregar.setForeground(new java.awt.Color(255, 255, 255));
+        txtagregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/car.png"))); // NOI18N
+        txtagregar.setText("Agregar");
+        txtagregar.setContentAreaFilled(false);
+        getContentPane().add(txtagregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/carx.png"))); // NOI18N
-        jButton2.setText("Eliminar");
-        jButton2.setContentAreaFilled(false);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, -1, -1));
+        txteliminar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        txteliminar.setForeground(new java.awt.Color(255, 255, 255));
+        txteliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/carx.png"))); // NOI18N
+        txteliminar.setText("Eliminar");
+        txteliminar.setContentAreaFilled(false);
+        getContentPane().add(txteliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, -1, -1));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/listo.png"))); // NOI18N
-        jButton3.setText("Finalizar");
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        txtfin.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        txtfin.setForeground(new java.awt.Color(255, 255, 255));
+        txtfin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/listo.png"))); // NOI18N
+        txtfin.setText("Finalizar");
+        txtfin.setContentAreaFilled(false);
+        txtfin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                txtfinActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 180, 50));
+        getContentPane().add(txtfin, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 180, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pkgfinal/Imagenes/stonk.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 700));
@@ -162,13 +168,17 @@ public class JDVenta extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtnitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtnitActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void txtfinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfinActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_txtfinActionPerformed
+
+    private void txtpuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,9 +223,6 @@ public class JDVenta extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -226,13 +233,16 @@ public class JDVenta extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTable tproducto;
+    private javax.swing.JTable tventa;
+    private javax.swing.JButton txtagregar;
+    private javax.swing.JButton txteliminar;
+    private javax.swing.JButton txtfin;
+    private javax.swing.JTextField txtnit;
+    private javax.swing.JTextField txtnombre;
+    private javax.swing.JTextField txtproducto;
+    private javax.swing.JTextField txtpu;
+    private javax.swing.JTextField txttotal;
+    private javax.swing.JTextField txtventa;
     // End of variables declaration//GEN-END:variables
 }
