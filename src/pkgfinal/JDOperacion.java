@@ -5,12 +5,15 @@
  */
 package pkgfinal;
 
+import java.sql.Connection;
+
 /**
  *
  * @author saulr
  */
 public class JDOperacion extends javax.swing.JDialog {
-
+    Conexion cx = new Conexion();
+    Connection cc = cx.conectar();
     /**
      * Creates new form JDOperacion
      */

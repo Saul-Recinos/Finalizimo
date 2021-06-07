@@ -5,12 +5,16 @@
  */
 package pkgfinal;
 
+import java.sql.Connection;
+
 /**
  *
  * @author saulr
  */
 public class JFPrincipal extends javax.swing.JFrame {
 
+    Conexion cx = new Conexion();
+    Connection cc = cx.conectar();
     /**
      * Creates new form JFPrincipal
      */
@@ -46,7 +50,7 @@ public class JFPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Inicio");
 
-        jMenuItem1.setText("Operacion");
+        jMenuItem1.setText("Compra");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
